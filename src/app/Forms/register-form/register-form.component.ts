@@ -38,7 +38,7 @@ export class RegisterFormComponent {
   ])
   showAlert = false
   alertMsg =''
-  user:UserPost
+
   alertColor ='blue'
 
   registerForm = new FormGroup({
@@ -48,29 +48,8 @@ export class RegisterFormComponent {
   })
 
   register() {
-    this.showAlert = true
-    this.alertMsg = 'Please wait! your account is being created'
-    this.alertColor = 'blue'
-    this.inSubmission = true
-    this.user = new UserPost(this.username.value,this.email.value,this.phoneNumber.value,this.phoneNumber.value)
-    try {
-      this.apiService.postUser(this.user).subscribe(
-        data => this.goToHome());
-      this.showAlert = true
-      this.alertMsg = 'success, your account details has been saved'
-      this.alertColor = 'green'
-    }catch (e) {
-      this.showAlert = true
-      this.alertMsg = 'kindly use another usernem'
-      this.alertColor = 'red'
-      this.inSubmission = false
-    }
-
   }
 
-  goToHome() {
-    this.router.navigate(["/home"]);
-  }
 
 }
 
