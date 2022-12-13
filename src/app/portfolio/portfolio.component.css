@@ -1,0 +1,31 @@
+.portfolio .container {
+  padding-bottom:40px ;
+}
+
+.portfolio  .portfolio-heading{
+  flex : 0 0 100% ;
+  max-width: 100%;
+
+
+}
+.portfolio .portfolio-headi   ng h2 {
+  color: var(--text-blac-900);
+  font-weight: 500;
+
+}
+.portfolio .portfolio-item {
+  flex:0 0 33.33%;
+  max-width: 33.33%;
+  margin-bottom: 30px;
+}
+.portfolio .portfolio-item {
+  border: 6px solid var(--bg-black-100);
+  border-radius:10px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.portfolio .portfolio-item-inner .portfolio-img img
+{
+  width: 100%;
+  display: block;
+}

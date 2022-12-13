@@ -1,3 +1,31 @@
+<div class="main-container">
+  <app-navigation></app-navigation>
+  <div class="main-content">
+    <app-profile></app-profile>
+    <app-about-me></app-about-me>
+    <app-service></app-service>
+    <app-portfolio></app-portfolio>
+    <app-contact></app-contact>
+  </div>
+  <div class="style-switcher" id="style" [style]="style">
+    <div class="style-switcher-toggler s-icon" (click)="toggleMode()">
+      <i class="fas fa-cog fa-spin"></i>
+    </div>
+    <div class="day-night s-icon">
+      <i class="fas fa-moon"></i>
+    </div>
+    <h4>Theme colors</h4>
+    <div class="colors">
+      <span class="color-1" onclick="setActiveStyle('color-1')"></span>
+      <span class="color-2" onclick="setActiveStyle('color-2')"></span>
+      <span class="color-3" onclick="setActiveStyle('color-3')"></span>
+      <span class="color-4" onclick="setActiveStyle('color-4')"></span>
+      <span class="color-5" onclick="setActiveStyle('color-5')"></span>
+    </div>
+  </div>
+</div>
+
+
 
 
 
