@@ -9,7 +9,17 @@ import {RegisterFormComponent} from "./Forms/register-form/register-form.compone
 import {LoginFormComponent} from "./Forms/login-form/login-form.component";
 
 
-const routes: Routes = [{path:"home",component:ProfileComponent},{path:"aboutMe",component :AboutMeComponent},{path:"portfolio",component:PortfolioComponent},{path:'service',component:ServiceComponent},{path:'contact',component:ContactComponent},{path:'register',component:RegisterFormComponent},{path:'login',component:LoginFormComponent}];
+const routes: Routes = [
+  {path:'',component:ProfileComponent},
+  {path:'home',component:ProfileComponent},
+  {path:'aboutMe',component :AboutMeComponent},
+  {path:'portfolio',component:PortfolioComponent},
+  {path:'service',component:ServiceComponent},
+  {path:'contact',component:ContactComponent},
+  {path:'register',component:RegisterFormComponent},
+  {path:'login',component:LoginFormComponent},
+
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

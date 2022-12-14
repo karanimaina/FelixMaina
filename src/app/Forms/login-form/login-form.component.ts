@@ -38,6 +38,7 @@ export class LoginFormComponent {
       this.showAlert = true
       this.alertMsg = 'Please wait! your account is being created'
       this.alertColor = 'blue'
+      this.router.navigate(['/nav'])
       // this.inSubmission = false
       // this.user = new LoginUser(this.username.value,this.password.value)
       // this.api.authenticateUser(this.user).subscribe((res:any)=> {
@@ -57,13 +58,11 @@ export class LoginFormComponent {
     this.alertMsg = 'success, your account details has been saved'
     this.alertColor = 'green'
   }
+submit(){
 
-  goToHome() {
-    this.router.navigate(["/home"]);
+}
+
+  GoToSignUp() {
+    this.router.navigate(["/register"])
   }
-
-
-
-
-
 }

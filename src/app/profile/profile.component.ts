@@ -13,7 +13,7 @@ export class ProfileComponent  implements OnInit{
 
   ngOnInit(): void {
       let options = {
-        strings:[" Application Developer ","web Designer","Web Developer"],
+        strings:["Application Developer","web Designer","Web Developer"],
         typeSpeed:100,
         BackSpeed:60,
         loop:true

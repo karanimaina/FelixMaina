@@ -20,6 +20,7 @@ body.dark{
 
 }
 
+
 body {
   margin: 0;
   padding: 0;
@@ -46,8 +47,9 @@ ul {
   min-height: 100vh;
   display: block;
   position: relative;
-  left: 270px;
+  left: 160px;
   top: 0;
+
   right: 0;
   padding:  10px;
   opacity: 1;

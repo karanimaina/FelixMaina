@@ -56,9 +56,7 @@ export class RegisterFormComponent {
 
   }
 
-
-
-  SignIn() {
+  GoToLogin() {
     this.router.navigate(['/login'])
   }
 }
