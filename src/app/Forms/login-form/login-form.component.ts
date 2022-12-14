@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {ApiService} from "../../services/api-service.service";
+import {LoginUser} from "../../models/LoginUser";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-login-form',
@@ -9,7 +12,7 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 export class LoginFormComponent {
   showAlert = false
   inSubmission = true
-  user :LoginUser
+  // user :LoginUser
 
   alertMsg ='Please wait! your account is being created'
   alertColor ='blue'
@@ -36,14 +39,14 @@ export class LoginFormComponent {
       this.alertMsg = 'Please wait! your account is being created'
       this.alertColor = 'blue'
       // this.inSubmission = false
-      this.user = new LoginUser(this.username.value,this.password.value)
-      this.api.proceedLogin(this.user).subscribe((res:any)=> {
-        debugger
-        console.log("res",res)
-        localStorage.setItem("access_token",res.access_token)
-        this.goToHome()
-
-      })
+      // this.user = new LoginUser(this.username.value,this.password.value)
+      // this.api.authenticateUser(this.user).subscribe((res:any)=> {
+      //   debugger
+      //   console.log("res",res)
+      //   localStorage.setItem("access_token",res.access_token)
+      //   this.goToHome()
+      //
+      // })
     }catch (e) {
       this.showAlert = true
       this.alertMsg = 'error'
@@ -59,7 +62,7 @@ export class LoginFormComponent {
     this.router.navigate(["/home"]);
   }
 
-}
+
 
 
 

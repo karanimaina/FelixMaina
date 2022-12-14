@@ -18,6 +18,9 @@ import { RegisterFormComponent } from './Forms/register-form/register-form.compo
 import {AlertComponent} from "./Forms/alert/alert.component";
 import { InputComponent } from './input/input.component';
 import {ReactiveFormsModule} from "@angular/forms";
+import {HttpClientModule} from "@angular/common/http";
+import {ApiService} from "./services/api-service.service";
+import { NavComponent } from './nav/nav.component';
 
 @NgModule({
   declarations: [
@@ -35,14 +38,16 @@ import {ReactiveFormsModule} from "@angular/forms";
     LoginFormComponent,
     RegisterFormComponent,
     AlertComponent,
-    InputComponent
+    InputComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
