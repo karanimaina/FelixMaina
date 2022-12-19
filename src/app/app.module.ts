@@ -9,14 +9,15 @@ import { AboutMeComponent } from './about-me/about-me.component';
 import { ServiceComponent } from './service/service.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { ContactComponent } from './contact/contact.component';
-import { LoginFormComponent } from './Forms/login-form/login-form.component';
-import { RegisterFormComponent } from './Forms/register-form/register-form.component';
-import {AlertComponent} from "./Forms/alert/alert.component";
+import {AlertComponent} from "./form/components/alert/alert.component";
 import { InputComponent } from './input/input.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import {ApiService} from "./services/api-service.service";
-import { FormModule } from './form/form.module';
+import {RegisterFormComponent} from "./form/components/register-form/register-form.component";
+import {LoginFormComponent} from "./form/components/login-form/login-form.component";
+import {RouterLink, RouterLinkActive, RouterOutlet} from "@angular/router";
+import {NavComponent} from "./form/components/nav/nav.component";
 
 @NgModule({
   declarations: [
@@ -27,10 +28,11 @@ import { FormModule } from './form/form.module';
     ServiceComponent,
     PortfolioComponent,
     ContactComponent,
-    LoginFormComponent,
-    RegisterFormComponent,
     AlertComponent,
     InputComponent,
+    NavComponent,
+    RegisterFormComponent,
+    LoginFormComponent
 
   ],
   imports: [
@@ -38,9 +40,16 @@ import { FormModule } from './form/form.module';
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FormModule
+    RouterOutlet,
+    RouterLink,
+    RouterLinkActive,
+    // FormModule
+
   ],
   providers: [ApiService],
+  exports: [
+    AlertComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

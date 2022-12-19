@@ -7,19 +7,19 @@
         <ul class="flex flex-row mt-1">
           <!-- Navigation Links -->
           <li >
-            <a class="px-2" routerLink="/about" routerLinkActive='hover:bg-indigo-400 rounded-full active:bg-indigo-500 focus:bg-yellow-300'>AboutMe</a>
+            <a class="px-2" routerLink="/nav/about" routerLinkActive='hover:bg-indigo-400 rounded-full active:bg-indigo-500 focus:bg-yellow-300'>AboutMe</a>
           </li>
           <li >
-            <a class="px-2" routerLink="/education"  routerLinkActive='hover:bg-indigo-400 rounded-full active:bg-indigo-500 focus:bg-yellow-300'>Education</a>
+            <a class="px-2" routerLink="/nav/education"  routerLinkActive='hover:bg-indigo-400 rounded-full active:bg-indigo-500 focus:bg-yellow-300'>Education</a>
           </li>
           <li>
-            <a class="px-2" routerLink="/experience" routerLinkActive='hover:bg-indigo-400 rounded-full active:bg-indigo-500 focus:bg-yellow-300'>Experience</a>
+            <a class="px-2" routerLink="/nav/experience" routerLinkActive='hover:bg-indigo-400 rounded-full active:bg-indigo-500 focus:bg-yellow-300'>Experience</a>
           </li>
           <li>
-            <a class="px-2" routerLink="/profile" routerLinkActive='hover:bg-indigo-400 rounded-full active:bg-indigo-500 focus:bg-yellow-300'>Profile</a>
+            <a class="px-2" routerLink="/nav/profile" routerLinkActive='hover:bg-indigo-400 rounded-full active:bg-indigo-500 focus:bg-yellow-300'>Profile</a>
           </li>
           <li>
-            <a class="px-2" routerLink="/portfolioForm" routerLinkActive='hover:bg-indigo-400 rounded-full active:bg-indigo-500 focus:bg-yellow-300'>PortFolio</a>
+            <a class="px-2" routerLink="/nav/portfolioForm" routerLinkActive='hover:bg-indigo-400 rounded-full active:bg-indigo-500 focus:bg-yellow-300'>PortFolio</a>
           </li>
         </ul>
         <!-- Language Switcher -->
@@ -43,6 +43,8 @@
     </nav>
   </header>
 </div>
+<div style="margin-left: 270px">
+
 <!-- Intro Section -->
-
-
+<router-outlet></router-outlet>
+</div>

@@ -1,14 +1,16 @@
+<head>
+  <link rel="stylesheet" href="/assets/css/color-1.css" class="alternate-style" title="color-1" [disabled]="true">
+  <link rel="stylesheet" href="/assets/css/color-2.css" class="alternate-style" title="color-2" [disabled]="true">
+  <link rel="stylesheet" href="/assets/css/color-3.css" class="alternate-style" title="color-3" [disabled]="true">
+  <link rel="stylesheet" href="/assets/css/color-4.css" class="alternate-style" title="color-4" [disabled]="true">
+  <link rel="stylesheet" href="/assets/css/color-5.css" class="alternate-style" title="color-5" [disabled]="false">
+</head>
 <div class="main-container">
   <app-navigation></app-navigation>
   <div class="main-content">
-<!--    <app-profile></app-profile>-->
-<!--    <app-about-me></app-about-me>-->
-<!--    <app-service></app-service>-->
-<!--    <app-portfolio></app-portfolio>-->
-<!--    <app-contact></app-contact>-->
     <router-outlet></router-outlet>
   </div>
-  <div class="style-switcher" id="style" [style]="style">
+  <div  [ngClass]="{'open': isOpen}" class="style-switcher">
     <div class="style-switcher-toggler s-icon" (click)="toggleMode()">
       <i class="fas fa-cog fa-spin"></i>
     </div>
@@ -17,11 +19,11 @@
     </div>
     <h4>Theme colors</h4>
     <div class="colors">
-      <span class="color-1" onclick="setActiveStyle('color-1')"></span>
-      <span class="color-2" onclick="setActiveStyle('color-2')"></span>
-      <span class="color-3" onclick="setActiveStyle('color-3')"></span>
-      <span class="color-4" onclick="setActiveStyle('color-4')"></span>
-      <span class="color-5" onclick="setActiveStyle('color-5')"></span>
+      <span class="color-1" (click)="setActiveStyle('color-1')"></span>
+      <span class="color-2" (click)="setActiveStyle('color-2')"></span>
+      <span class="color-3" (click)="setActiveStyle('color-3')"></span>
+      <span class="color-4" (click)="setActiveStyle('color-4')"></span>
+      <span class="color-5" (click)="setActiveStyle('color-5')"></span>
     </div>
   </div>
 </div>

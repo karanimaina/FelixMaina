@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {ApiService} from "../../services/api-service.service";
-import {LoginUser} from "../../models/LoginUser";
+import {ApiService} from "../../../services/api-service.service";
+import {LoginUser} from "../../../models/LoginUser";
 import {Router} from "@angular/router";
 
 @Component({
@@ -63,6 +63,6 @@ submit(){
 }
 
   GoToSignUp() {
-    this.router.navigate(["/register"])
+    this.router.navigate(["/sign"])
   }
 }

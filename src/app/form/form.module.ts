@@ -8,6 +8,10 @@ import {ProfileFormComponent} from "./components/profile-form/profile-form.compo
 import {EducationFormComponent} from "./components/education-form/education-form.component";
 import {ExperienceFormComponent} from "./components/experience-form/experience-form.component";
 import {NavComponent} from "./components/nav/nav.component";
+import { ControlComponent } from './control/control.component';
+import {ReactiveFormsModule} from "@angular/forms";
+import {HomeFormComponent} from "./components/home-form/home-form.component";
+
 
 
 @NgModule({
@@ -17,11 +21,16 @@ import {NavComponent} from "./components/nav/nav.component";
     ProfileFormComponent,
     EducationFormComponent,
     ExperienceFormComponent,
-    NavComponent
+    AboutMeFormComponent,
+    // RegisterFormComponent,
+    // LoginFormComponent,
+    ControlComponent,
+    HomeFormComponent
   ],
   imports: [
     CommonModule,
-    FormRoutingModule
+    FormRoutingModule,
+    ReactiveFormsModule,
   ]
 })
 export class FormModule { }
