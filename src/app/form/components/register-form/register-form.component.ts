@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
-import {ApiService} from "../../../services/api-service.service";
 import {UserPost} from "../../../models/UserPost";
+import {ApiService} from "../../../api/api.service";
+import {User} from "../../../model/user";
 
 @Component({
   selector: 'app-register-form',
@@ -11,7 +12,7 @@ import {UserPost} from "../../../models/UserPost";
 })
 export class RegisterFormComponent {
 
-
+  user :User
 
 
   constructor(private apiService :ApiService,private router:Router) {
@@ -31,7 +32,7 @@ export class RegisterFormComponent {
 
   phoneNumber = new FormControl("",[
     Validators.required,
-    Validators.pattern(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/gm)
+    Validators.pattern(/(\+?( |-|\.)?\d{1,2}( |-|\.)?)?(\(?\d{3}\)?|\d{3})( |-|\.)?(\d{3}( |-|\.)?\d{4})/gm)
   ])
   password = new FormControl("",[
     Validators.required,
@@ -39,6 +40,7 @@ export class RegisterFormComponent {
   ])
   showAlert = false
   alertMsg =''
+
 
   alertColor ='blue'
 
@@ -50,10 +52,16 @@ export class RegisterFormComponent {
   })
 
   register() {
-    // this.user = new UserPost(this.username.value,this.email.value,this.phoneNumber.value,this.password.value)
+    this.user= new User(this.username.value!, this.email.value!,this.phoneNumber.value!,this.password.value!)
+    try {
+      this.apiService.CreateUser(this.user).subscribe((res:any)=> {
+        this.router.navigate(['/login'])
+    })
 
-    // this.apiService.registerUser(this.user).subscribe(data => this.goToLogin());
-
+  }catch (e){
+    this.alertMsg= 'user already exist'
+      this.alertColor = 'red'
+    }
   }
 
   GoToLogin() {

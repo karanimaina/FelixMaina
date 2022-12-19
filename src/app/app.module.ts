@@ -12,12 +12,14 @@ import { ContactComponent } from './contact/contact.component';
 import {AlertComponent} from "./form/components/alert/alert.component";
 import { InputComponent } from './input/input.component';
 import {ReactiveFormsModule} from "@angular/forms";
-import {HttpClientModule} from "@angular/common/http";
-import {ApiService} from "./services/api-service.service";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {RegisterFormComponent} from "./form/components/register-form/register-form.component";
 import {LoginFormComponent} from "./form/components/login-form/login-form.component";
 import {RouterLink, RouterLinkActive, RouterOutlet} from "@angular/router";
 import {NavComponent} from "./form/components/nav/nav.component";
+import {TokenInterceptorService} from "./api/token-interceptor.service";
+import {ApiService} from "./api/api.service";
+import { RepositoryComponent } from './repo/repository/repository.component';
 
 @NgModule({
   declarations: [
@@ -31,11 +33,14 @@ import {NavComponent} from "./form/components/nav/nav.component";
     AlertComponent,
     InputComponent,
     NavComponent,
+
     RegisterFormComponent,
-    LoginFormComponent
+    LoginFormComponent,
+    RepositoryComponent
 
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
@@ -46,7 +51,7 @@ import {NavComponent} from "./form/components/nav/nav.component";
     // FormModule
 
   ],
-  providers: [ApiService],
+  providers: [ApiService,{provide:HTTP_INTERCEPTORS,useClass:TokenInterceptorService,multi:true}],
   exports: [
     AlertComponent
   ],
