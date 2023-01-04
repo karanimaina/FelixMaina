@@ -1,12 +1,8 @@
 <div class="container-fluid bg" style="margin-left: 276px"><br>
-  <div class="col-md-9 ">
   <div class="row"><br>
-    <div class="col-md-6 user">
+    <div class="col-md-3 user">
       <h3 class="text-center">GitHub Profile</h3><br>
       <div class="card">
-        <div>
-          <img src="assets/img.png" alt="user_profile image" style="width:200px;height:200px;">
-        </div>
         <div class="git">
           <div class="text-start">
             <h3>{{user?.name}}</h3>
@@ -20,9 +16,7 @@
           <div>
             {{user?.public_repos}} Repositories
           </div>
-          <div>
-            {{user?.private_repos}} Repositories
-          </div>
+
           <div>
             <i class="fa fa-building" aria-hidden="true"></i> {{user?.company}}
           </div>
@@ -42,9 +36,7 @@
         </div>
 
       </div>
-
     </div>
-  </div>
     <div class="col-md-9 ">
       <h3 class="text-center">Repositories</h3><br>
       <div class="row">
