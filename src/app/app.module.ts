@@ -19,7 +19,10 @@ import {RouterLink, RouterLinkActive, RouterOutlet} from "@angular/router";
 import {NavComponent} from "./form/components/nav/nav.component";
 import {TokenInterceptorService} from "./api/token-interceptor.service";
 import {ApiService} from "./api/api.service";
-import { RepositoryComponent } from './repo/repository/repository.component';
+import {RepositoryComponent} from "./repo/repository/repository.component";
+import { DateCountPipe } from './pipe/date-count.pipe';
+import { CapitalizeSentencePipe } from './pipe/capitalize-sentence-pipe.pipe';
+import { StrikethroughDirective } from './strikethrough.directive';
 
 @NgModule({
   declarations: [
@@ -33,10 +36,13 @@ import { RepositoryComponent } from './repo/repository/repository.component';
     AlertComponent,
     InputComponent,
     NavComponent,
-
+    RepositoryComponent,
     RegisterFormComponent,
     LoginFormComponent,
-    RepositoryComponent
+    DateCountPipe,
+   CapitalizeSentencePipe,
+   StrikethroughDirective
+
 
   ],
   imports: [

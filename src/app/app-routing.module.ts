@@ -8,6 +8,7 @@ import {ContactComponent} from "./contact/contact.component";
 import {RegisterFormComponent} from "./form/components/register-form/register-form.component";
 import {LoginFormComponent} from "./form/components/login-form/login-form.component";
 import {NavComponent} from "./form/components/nav/nav.component";
+import {RepositoryComponent} from "./repo/repository/repository.component";
 
 
 const routes: Routes = [
@@ -19,6 +20,7 @@ const routes: Routes = [
   {path:'contact',component:ContactComponent},
   {path:"sign", component:RegisterFormComponent},
   {path:"login", component:LoginFormComponent},
+  {path:'repository',component:RepositoryComponent},
   {
     path:'nav',
     component: NavComponent,

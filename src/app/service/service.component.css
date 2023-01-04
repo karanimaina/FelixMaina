@@ -19,7 +19,7 @@
   box-shadow: 0 0 20px rgba(48, 46, 77,0.15) ;
 }
 .service .service-item .service-item-inner .icon {
-  height: 60px;
+  height: 100px;
   width: 60px;
   border-radius: 50%;
   display: block;
@@ -34,11 +34,11 @@
   transition: all 0.3s ease;
 }
 .service .service-item .service-item-inner:hover .icon {
-  background : var(--skin-color);
+  /*background : var(--skin-color);*/
 }
 .service .service-item .service-item-inner:hover .icon .fa {
   font-size: 25px;
-  color : #ffffff
+  /*color : #ffffff*/
 }
 .service .service-item .service-item-inner h4 {
   font-size:  18px;
@@ -53,4 +53,26 @@
   color: var(--text-black-700);
   line-height: 25px;
 
+}* {
+   box-sizing: border-box;
+ }
+
+.zoom {
+  padding: 50px;
+  transition: transform .2s;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
 }
+
+.zoom:hover {
+  -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  transform: scale(1.5);
+}
+.zoom:hover img {
+  -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  transform: scale(1.5);
+}
+

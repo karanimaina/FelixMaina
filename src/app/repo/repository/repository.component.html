@@ -1,46 +1,54 @@
-<div class="container-fluid bg"><br>
+<div class="container-fluid bg" style="margin-left: 276px"><br>
+  <div class="col-md-9 ">
   <div class="row"><br>
-    <div class="col-md-3 user">
+    <div class="col-md-6 user">
       <h3 class="text-center">GitHub Profile</h3><br>
       <div class="card">
+        <div>
+          <img src="assets/img.png" alt="user_profile image" style="width:200px;height:200px;">
+        </div>
         <div class="git">
           <div class="text-start">
-            <h3>{{username?.name}}</h3>
+            <h3>{{user?.name}}</h3>
           </div>
           <div>
-            {{username?.login}}
+            {{user?.login}}
           </div>
           <div>
-            {{username?.bio}}
+            {{user?.bio}}
           </div>
           <div>
-            {{username?.public_repos}} Repositories
-          </div>
-
-          <div>
-            <i class="fa fa-building" aria-hidden="true"></i> {{username?.company}}
+            {{user?.public_repos}} Repositories
           </div>
           <div>
-            <i class="fa fa-map-marker" aria-hidden="true"></i> {{username?.location}}
+            {{user?.private_repos}} Repositories
           </div>
           <div>
-            <i class="fa fa-users" aria-hidden="true"></i> {{username?.followers}} Followers.
-            {{username?.following}} Following.
+            <i class="fa fa-building" aria-hidden="true"></i> {{user?.company}}
           </div>
           <div>
-            <p><i class="fa fa-sign-in" aria-hidden="true"></i> {{username?.created_at | date}} </p>
-            <p appStrikethrough>{{username?.created_at | dateCount }} Days ago</p>
+            <i class="fa fa-map-marker" aria-hidden="true"></i> {{user?.location}}
+          </div>
+          <div>
+            <i class="fa fa-users" aria-hidden="true"></i> {{user?.followers}} Followers.
+            {{user?.following}} Following.
+          </div>
+          <div>
+            <p><i class="fa fa-sign-in" aria-hidden="true"></i> {{user?.created_at | date}} </p>
+            <p appStrikethrough>{{user?.created_at | dateCount }} Days ago</p>
 
           </div>
 
         </div>
 
       </div>
+
     </div>
+  </div>
     <div class="col-md-9 ">
       <h3 class="text-center">Repositories</h3><br>
       <div class="row">
-        <div class="card col-md-6" *ngFor="let repository of repository; let i = index ">
+        <div class="card col-md-6" *ngFor="let repository of repo; let i = index ">
           <h4 class="text-center">{{repository.name}}</h4>
           <p>{{repository.description}}</p>
           <a href="{{ repository.html_url }}" target="_blank" class="">Repository information</a>

@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {User} from "../../model/user";
-import {DataService} from "../data.service";
+import {ApiService} from "../../api/api.service";
+import {UserGithub} from "../model/user";
+
 
 @Component({
   selector: 'app-repository',
@@ -8,44 +9,23 @@ import {DataService} from "../data.service";
   styleUrls: ['./repository.component.css']
 })
 export class RepositoryComponent implements OnInit{
-  username!: User;
-  repository: any;
+  user:UserGithub
 
-  constructor(private requestUser:DataService) {}
+  repo:any
+  constructor(private api:ApiService) {}
 
-  getUser(githubUsername: string){
-    this.requestUser.getUserDataRequest(githubUsername).then(
-      (Response)=>{
-        this.username=this.requestUser.userData;
-        console.log(this.username)
-      },
-      (error)=>{
-        console.log(error);
-      }
-    )
+  ngOnInit() {
+    this.api.getUserRepo().subscribe((res: any) => {
+      this.repo = res
+      console.log(res)
+    })
+
+    this.api.getUserData().subscribe((res: any) => {
+      this.user = res
+      console.log(res)
+    })
   }
 
-
-  getRepos(githubUsername: string){
-    this.requestUser.getReposDataRequest(githubUsername).then(
-      (Response)=>{
-        this.repository=this.requestUser.repoData;
-      },
-      (error)=>{
-        console.log(error);
-      }
-    )
-  }
-
-
-
-  ngOnInit(): void {
-    this.getUser("karanimaina")
-    this.getRepos("karanimaina")
-
-  }
-
-}
 
 
 }

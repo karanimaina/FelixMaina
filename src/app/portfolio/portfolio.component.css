@@ -24,8 +24,11 @@
   overflow: hidden;
   cursor: pointer;
 }
+.portfolio .portfolio-item .portfolio-img a{
+  text-decoration-color: #1854b4;
+}
 .portfolio .portfolio-item-inner .portfolio-img img
 {
-  width: 100%;
+  width: 200%;
   display: block;
 }
