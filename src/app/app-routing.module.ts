@@ -12,11 +12,12 @@ import {RepositoryComponent} from "./repo/repository/repository.component";
 
 
 const routes: Routes = [
-  {
-    path: '',
-    pathMatch: 'full',
-    redirectTo: 'home'
-  },
+  // {
+  //   path: '',
+  //   pathMatch: 'full',
+  //   redirectTo: 'home'
+  // },
+  {path:'',component:ProfileComponent},
   {path:'home',component:ProfileComponent},
   {path:'aboutMe',component :AboutMeComponent},
   {path:'portfolio',component:PortfolioComponent},
