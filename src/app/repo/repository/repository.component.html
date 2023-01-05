@@ -5,31 +5,31 @@
       <div class="card">
         <div class="git">
           <div class="text-start">
-            <h3>{{user?.name}}</h3>
+            <h3>{{user.name}}</h3>
           </div>
           <div>
-            {{user?.login}}
+            {{user.login}}
           </div>
           <div>
-            {{user?.bio}}
+            {{user.bio}}
           </div>
           <div>
-            {{user?.public_repos}} Repositories
+            {{user.public_repos}} Repositories
           </div>
 
           <div>
-            <i class="fa fa-building" aria-hidden="true"></i> {{user?.company}}
+            <i class="fa fa-building" aria-hidden="true"></i> {{user.company}}
           </div>
           <div>
-            <i class="fa fa-map-marker" aria-hidden="true"></i> {{user?.location}}
+            <i class="fa fa-map-marker" aria-hidden="true"></i> {{user.location}}
           </div>
           <div>
-            <i class="fa fa-users" aria-hidden="true"></i> {{user?.followers}} Followers.
-            {{user?.following}} Following.
+            <i class="fa fa-users" aria-hidden="true"></i> {{user.followers}} Followers.
+            {{user.following}} Following.
           </div>
           <div>
-            <p><i class="fa fa-sign-in" aria-hidden="true"></i> {{user?.created_at | date}} </p>
-            <p appStrikethrough>{{user?.created_at | dateCount }} Days ago</p>
+            <p><i class="fa fa-sign-in" aria-hidden="true"></i> {{user.created_at | date}} </p>
+            <p appStrikethrough>{{user.created_at | dateCount }} Days ago</p>
 
           </div>
 
