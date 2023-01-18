@@ -19,6 +19,7 @@ export class AppComponent implements OnInit {
 
 
   ngOnInit() {
+    this.route.navigate(['/home'])
     this.alternateStyle = (<HTMLElement>this.elRef.nativeElement)
       .querySelectorAll('.alternate-style');
     console.log("on init called")
