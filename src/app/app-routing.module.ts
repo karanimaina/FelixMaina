@@ -13,7 +13,7 @@ import {RepositoryComponent} from "./repo/repository/repository.component";
 
 const routes: Routes = [
   {
-    path: '',
+    path: '/',
     pathMatch: 'full',
     redirectTo: 'home'
   },
